@@ -3,6 +3,36 @@
 const {bookshelf} = require('../db/database')
 const Show = require('../models/show')
 
+module.exports.getShow = ({params: {id}}, res, next) => {
+  Show.getSingleShow(id)
+  .then( (show) => {
+    res.status(200).json(show)
+  })
+  .catch( (error) => {
+    next(error);
+  });
+};
+
+module.exports.deleteShow = ({params: {id}}, res, next) => {
+  Show.forge({id})
+  .destroy()
+  .then((show) => {
+    res.status(202).json(show)
+  })
+  .catch((error) => {
+    next(error);
+  })
+};
+
+module.exports.addShow = ({body}, res, next) => {
+  Show.forge(body)
+  .save()
+  .then(() => res.status(201).json({"msg": "Nice POST"}))
+  .catch((error) => {
+    next(error)
+  })
+}
+
 module.exports.getShows = (req, res, next) => {
   Show.getAll()
   .then((shows) => {

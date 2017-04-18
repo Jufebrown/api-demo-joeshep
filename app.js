@@ -39,7 +39,6 @@ if(app.get('env') === 'development' || app.get('env') === 'test') {
 
 // sends error message but not whole stack
 app.use((err, req, res, next) => {
-  console.log('error!', err)
   res.status(err.status || 500)
   res.json({
     message: err.message,
