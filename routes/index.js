@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
     'favorites': 'https://api-demo-jufe.herokuapp.com/api/v1/shows/favorites?showId=<showId>',
     'showAndItsDirectors': 'https://api-demo-jufe.herokuapp.com/api/v1/shows/directors?showId=<showId>',
     'directors': 'https://api-demo-jufe.herokuapp.com/api/v1/directors',
-    'director': 'https://api-demo-jufe.herokuapp.com/api/v1/directors/:directorId'
+    'director': 'https://api-demo-jufe.herokuapp.com/api/v1/directors/:directorId',
     'directorAndTheirShows': 'https://api-demo-jufe.herokuapp.com/api/v1/directors/shows?directorId=<directorId>',
   })
 })
