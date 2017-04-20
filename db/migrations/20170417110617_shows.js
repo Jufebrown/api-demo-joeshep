@@ -28,7 +28,7 @@ exports.up = (knex, Promise) => {
 
 exports.down = (knex, Promise) =>
   knex.schema
-    .dropTable('shows_directors')
+    // .dropTable('shows_directors')
     .dropTable('favorites')
-    .dropTable('directors')
+    // .dropTable('directors')
     .dropTable('shows')
