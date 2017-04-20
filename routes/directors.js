@@ -3,7 +3,7 @@
 const {Router} = require('express')
 const router = Router()
 
-const {getDirector, getDirectors, getDirectorShows} = require('../controllers/showCtrl')
+const {getDirector, getDirectors, getDirectorShows} = require('../controllers/directorCtrl')
 
 router.get('/directors', getDirectors)
 router.get('/directors/shows', getDirectorShows)
