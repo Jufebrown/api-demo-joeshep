@@ -26,4 +26,9 @@ exports.up = (knex, Promise) => {
   })
 };
 
-exports.down = (knex, Promise) => knex.schema.dropTable('favorites').dropTable('shows')
+exports.down = (knex, Promise) =>
+  knex.schema
+    .dropTable('shows_directors')
+    .dropTable('favorites')
+    .dropTable('directors')
+    .dropTable('shows')
